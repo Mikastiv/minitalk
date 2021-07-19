@@ -6,7 +6,7 @@
 #    By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/17 11:52:24 by mleblanc          #+#    #+#              #
-#    Updated: 2021/07/17 12:16:41 by mleblanc         ###   ########.fr        #
+#    Updated: 2021/07/19 11:53:14 by mleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ SRCS		=	$(addprefix $(SRC)/, $(CFILES_C))
 SRCS		+=	$(addprefix $(SRC)/, $(CFILES_S))
 
 CC			=	clang
-CFLAGS		=	-Wall -Wextra -Werror -g
+CFLAGS		=	-Wall -Wextra -Werror
 RM			=	rm -rf
 
 $(OBJ)/%.o:	$(SRC)/%.c
@@ -64,8 +64,10 @@ fclean:		clean
 
 re:			fclean all
 
+bonus:		all
+
 norme:
 			$(MAKELIBFT) norme
 			norminette $(SRCS) $(HEADERS)
 
-.PHONY:		all clean fclean re norme
+.PHONY:		all clean fclean re norme bonus
