@@ -6,11 +6,11 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 12:14:11 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/07/17 14:47:12 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/07/19 12:50:28 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "utils.h"
 #include <signal.h>
 #include <unistd.h>
 
@@ -45,7 +45,7 @@ int	main(int argc, char **argv)
 	{
 		ft_putstr_fd("usage: ", STDERR_FILENO);
 		ft_putstr_fd(argv[0], STDERR_FILENO);
-		ft_putendl_fd(" [server pid] [message]", STDERR_FILENO);
+		ft_putstr_fd(" [server pid] [message]\n", STDERR_FILENO);
 		return (0);
 	}
 	spid = ft_atoi(argv[1]);

@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/05 09:53:47 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/05/05 10:01:44 by mleblanc         ###   ########.fr       */
+/*   Created: 2021/07/19 12:47:56 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/07/19 12:56:23 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef UTILS_H
+# define UTILS_H
 
-int	ft_toupper(int c)
-{
-	if (ft_islower(c))
-		return (c - ('a' - 'A'));
-	return (c);
-}
+void	ft_putstr_fd(const char *s, int fd);
+int		ft_atoi(const char *str);
+void	ft_putnbr_fd(int n, int fd);
+
+#endif

@@ -6,13 +6,14 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 12:14:08 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/07/19 11:49:48 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/07/19 12:53:31 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "utils.h"
 #include <unistd.h>
 #include <signal.h>
+#include <stdbool.h>
 
 void	handler(int signo)
 {
@@ -42,12 +43,13 @@ int	main(int argc, char **argv)
 	if (argc != 1)
 	{
 		ft_putstr_fd("usage: ", STDERR_FILENO);
-		ft_putendl_fd(argv[0], STDERR_FILENO);
+		ft_putstr_fd(argv[0], STDERR_FILENO);
+		ft_putstr_fd("\n", STDERR_FILENO);
 		return (0);
 	}
 	pid = getpid();
 	ft_putnbr_fd(pid, STDOUT_FILENO);
-	ft_putendl_fd("", STDOUT_FILENO);
+	ft_putstr_fd("\n", STDOUT_FILENO);
 	signal(SIGUSR1, handler);
 	signal(SIGUSR2, handler);
 	while (true)
