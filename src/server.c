@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 12:14:08 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/07/19 12:53:31 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/07/20 10:34:45 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <unistd.h>
 #include <signal.h>
 #include <stdbool.h>
+#include <stdlib.h>
 
 void	handler(int signo)
 {
@@ -45,7 +46,7 @@ int	main(int argc, char **argv)
 		ft_putstr_fd("usage: ", STDERR_FILENO);
 		ft_putstr_fd(argv[0], STDERR_FILENO);
 		ft_putstr_fd("\n", STDERR_FILENO);
-		return (0);
+		exit(EXIT_FAILURE);
 	}
 	pid = getpid();
 	ft_putnbr_fd(pid, STDOUT_FILENO);
