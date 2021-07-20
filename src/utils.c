@@ -6,25 +6,13 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 12:48:36 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/07/19 12:56:07 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/07/20 11:40:04 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 #include <unistd.h>
 #include <stddef.h>
-
-#define UCHAR unsigned char
-
-static int	ft_isspace(int c)
-{
-	return (((UCHAR)c >= '\t' && (UCHAR)c <= '\r') || (UCHAR)c == ' ');
-}
-
-static int	ft_isdigit(int c)
-{
-	return ((unsigned char)c >= '0' && (unsigned char)c <= '9');
-}
 
 void	ft_putstr_fd(const char *s, int fd)
 {
@@ -43,7 +31,7 @@ int	ft_atoi(const char *str)
 
 	sign = 1;
 	result = 0;
-	while (ft_isspace(*str))
+	while ((*str >= '\t' && *str <= '\r') || *str == ' ')
 		++str;
 	if (*str == '-')
 	{
@@ -52,7 +40,7 @@ int	ft_atoi(const char *str)
 	}
 	else if (*str == '+')
 		++str;
-	while (ft_isdigit(*str))
+	while (*str >= '0' && *str <= '9')
 		result = (result * 10) + (*str++ - '0');
 	return (result * sign);
 }
