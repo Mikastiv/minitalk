@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 12:14:11 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/07/20 10:35:23 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/07/22 16:05:41 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ int	main(int argc, char **argv)
 {
 	pid_t	spid;
 
-	if (argc < 3)
+	if (argc != 3)
 	{
 		ft_putstr_fd("usage: ", STDERR_FILENO);
 		ft_putstr_fd(argv[0], STDERR_FILENO);
-		ft_putstr_fd(" [server pid] [message]\n", STDERR_FILENO);
+		ft_putstr_fd(" server_pid message\n", STDERR_FILENO);
 		exit(EXIT_FAILURE);
 	}
 	spid = ft_atoi(argv[1]);
